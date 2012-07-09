@@ -30,10 +30,17 @@ class ProjectsController < ApplicationController
 		if @project.update_attributes(params[:project])
 			redirect_to @project, :notice => "Project has been updated."
 		else
-			#flash[:alert]
+			flash[:alert] = "Project has not been updated."
 			render :action => 'edit' 
 		end
 	end
+
+	def destroy
+		@project.destroy
+		redirect_to projects_path
+		flash[:notice] = "Project has been deleted."
+	end
+
 	protected
 
 	def find_project
