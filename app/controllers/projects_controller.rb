@@ -23,6 +23,17 @@ class ProjectsController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+
+	def update
+		if @project.update_attributes(params[:project])
+			redirect_to @project, :notice => "Project has been updated."
+		else
+			#flash[:alert]
+			render :action => 'edit' 
+		end
+	end
 	protected
 
 	def find_project
