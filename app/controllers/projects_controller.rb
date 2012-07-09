@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 	before_filter :find_project, :only => [:show, :edit, :update, :destroy]
 
 	def index
+		@projects = Project.all
 	end
 
 	def new
