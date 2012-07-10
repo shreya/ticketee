@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'devise', '~> 1.4.3'
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
@@ -32,6 +33,7 @@ group :test do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'factory_girl'
+	gem 'email_spec'
 end
 
 # To use ActiveModel has_secure_password
