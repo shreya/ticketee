@@ -1,4 +1,5 @@
 <% title(@project.name, "Projects") %>
+<p><%= @project.name %> </p>
 <p>
 	<%= link_to "Edit Project", edit_project_path(@project) %>
 </p>
@@ -10,3 +11,10 @@
 <p>
 	<%= link_to "New Ticket", new_project_ticket_path(@project) %>
 </p>
+
+<ul id='tickets'>
+
+	<% @project.tickets.each do |ticket| %>
+		<li>#<%= ticket.id %> - <%= link_to ticket.title, [ticket.project, ticket] %></li>
+	<% end %>
+</ul>

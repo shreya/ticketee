@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>
-  	<% if content_for? :title %>
+  	<% if content_for?(:title) %>
   		<%= yield(:title) %>
   	<% else %>
   		"Ticketee"
@@ -13,13 +13,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1><%= link_to "Ticketee", root_path %></h1>
 
-<%= yield %>
-<% flash.each do |key, value| %>
-	<div class='flash' id="<%= key%>">
-		<%= value %>
-	</div>
-<% end %>
+  <%= yield %>
+  <% flash.each do |key, value| %>
+	 <div class='flash' id="<%= key%>">
+	   	<%= value %>
+	 </div>
+  <% end %>
 
 </body>
 </html>

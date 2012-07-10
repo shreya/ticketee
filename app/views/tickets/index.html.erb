@@ -1,5 +1,6 @@
-<h1>Tickets</h1>
+<ul id='tickets'>
 
-<% @tickets.each do |ticket| %>
-	<p><%= link_to ticket.title, [ticket.project, ticket] %></p>
-<% end %>
+	<% @project.tickets.each do |ticket| %>
+		<li>#<%= ticket.id %> - <%= link_to ticket.title, [ticket.project, ticket] %></li>
+	<% end %>
+</ul>
